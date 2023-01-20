@@ -1,0 +1,5 @@
+write.c and read.c
+------------------
+
+demo system calls. shows how data is shared by programs using files. show the assembly of read function call in a debugger and show them the trap/system call instruction and how parameters are passed to the system call.
+

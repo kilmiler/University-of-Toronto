@@ -1,0 +1,63 @@
+# this script helps show the execution of ./program
+# gdb program
+l
+b main
+r
+# text at bottom of address space
+p main
+# show that the pc points to the next instruction
+disas
+p $pc
+stepi
+p $pc
+# global data lies above text
+p &a
+# stack lies at top of address space
+p &b
+# call f()
+b f
+c
+# stack grows down (&y is less than &b)
+p &y
+p &heap1
+p &heap2
+# show that heap grows up
+# the value of heap2 is greater than the value of heap1,
+# although this depends on order of allocations and deallocations
+n
+n
+n
+print heap1
+print heap2
+c
+
+# rerun program again to show how the program stack works
+l
+b main
+r
+bt
+p $fp
+p (char *)$fp - (char *)&b
+p (char *)$fp - (char *)&c
+# show how b and c are accessed using $fp (ebp)
+# show address where f will return
+disas
+l f
+b f
+# remind them about $fp value
+p $fp
+c
+bt
+# fp has changed. we are in the activation frame of f()
+p $fp
+# show prev fp
+p/x *(long long *)$fp
+# show return address in main
+p/x *((long long *)$fp + 1)
+# show assembly of main
+disas
+# show prev fp
+p/x *(long long *)$fp
+# show what happens on function return
+fin
+p $fp

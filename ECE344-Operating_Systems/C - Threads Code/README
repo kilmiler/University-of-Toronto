@@ -1,0 +1,5 @@
+threads-print.c
+---------------
+
+show how scheduler interleaves the execution of threads, and threads don't
+control the interleaving.

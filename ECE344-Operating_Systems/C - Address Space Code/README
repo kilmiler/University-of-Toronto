@@ -1,0 +1,9 @@
+program.c, gdbinit-program
+--------------------------
+
+shows the execution of program. run as follows:
+
+gdb program
+
+then run the commands shown in ./gdbinit-program by hand. These gdb commands show the addresses of program code, global variables, local variables, parameters. We also see the values of the program counter, stack pointer, frame pointer, function activation frames, and how local variables are accessed using the frame pointer. See all the lecture slides: 07-program-address-space.pptx
+
