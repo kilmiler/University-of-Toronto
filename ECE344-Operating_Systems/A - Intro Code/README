@@ -1,0 +1,43 @@
+1. cpu.c
+--------
+
+shows the wonders of CPU virtualization.
+
+cat /proc/cpuinfo on my laptop shows that the x86-64 processor has two cores,
+each hyper-threaded, which show up as 4 "processors".
+
+run several, say 8, copies of the cpu program in the background.
+
+./cpu 1 & ./cpu 2 & ./cpu 3 & ./cpu 4 & ./cpu 5 & ./cpu 6 & ./cpu 7 & ./cpu 8 &
+
+to kill all these background jobs, run:
+
+kill $(jobs -p)
+
+2. mem.c
+--------
+
+shows the wonders of memory virtualization.
+
+run multiple copies as follows:
+
+setarch x86_64 -R ./mem 1 & setarch x86_64 -R ./mem 1000 &
+
+to kill all these background jobs, run:
+
+kill $(jobs -p)
+
+Instead of using setarch, you can also run the mem program under the debugger
+gdb, which turns off ASLR.
+
+3. threads-race.c, threads-sync.c, threads-atomic.c
+---------------------------------------------------
+
+shows how multiple threads update a shared counter, causing a race, and how to
+synchronize accesses to avoid races.
+
+4. write.c and read.c
+---------------------
+
+demo system calls. shows how data is shared by programs using files. show the assembly of read function call in a debugger and show them the trap/system call instruction and how parameters are passed to the system call.
+
