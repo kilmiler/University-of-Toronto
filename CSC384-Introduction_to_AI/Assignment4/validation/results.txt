@@ -1,0 +1,10 @@
+Line 38: expected <New : AJ0> but got <New : NP0>
+Line 58: expected <on : AVP> but got <on : PRP>
+Line 61: expected <much : DT0> but got <much : AV0>
+Line 75: expected <her : DPS> but got <her : PNP>
+Line 110: expected <progressed : VVN-VVD> but got <progressed : VVD-VVN>
+Line 155: expected <both : DT0> but got <both : AV0>
+Line 165: expected <off : PRP-AVP> but got <off : AVP-PRP>
+Line 171: expected <to : PRP> but got <to : TO0>
+Total words seen: 202.
+Total matches: 194.
